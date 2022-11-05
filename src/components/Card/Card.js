@@ -1,13 +1,13 @@
 import React from 'react'
-import classes from '../Card/Card.module.css'
+import '../Card/Card.scss'
 import { Link } from 'react-router-dom'
 
 const Card = ({ img, href, title, description, popularity, releaseDate }) => {
   return (
-    <div className={classes.container}>
+    <div className="card-container">
       <Link to={href}>
         <div>
-          <img src={img} alt="" />
+          <img src={img} alt="Movies" />
         </div>
         <h1>{title}</h1>
         <h4>Description:</h4>

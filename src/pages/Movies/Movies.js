@@ -1,11 +1,11 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import Card from '../../components/Card/Card'
-import classes from '../Movies/Movies.module.css'
+import '../Movies/Movies.scss'
 import gallery from '../../assets/gallery.png'
 
 const Movies = () => {
-  // const navigate = useNavigate()
+  // Endpoint to get the list of all the movies
   const baseURL =
     ' https://api.themoviedb.org/3/search/movie?api_key=48b43c71c226d58239efb833d05ab17c&language=en-US&query=NASA&include_adult=false&1'
 
@@ -25,7 +25,7 @@ const Movies = () => {
   }, [])
 
   return (
-    <section className={classes.container}>
+    <section className="movies-container">
       {moviesData.map((data, index) => {
         return (
           <Card

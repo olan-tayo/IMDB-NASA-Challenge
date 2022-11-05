@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import classes from '../Movie/Movie.module.css'
+import '../Movie/Movie.scss'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
@@ -7,10 +7,12 @@ const Movie = () => {
   const { id } = useParams()
   const [movieData, setMoviesData] = useState({})
 
+  // function to get movie by id
   const handleGetMovieDetails = async () => {
     let response = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=48b43c71c226d58239efb833d05ab17c`,
     )
+
     setMoviesData({
       image:
         ' https://image.tmdb.org/t/p/original//' + response.data.poster_path,
@@ -31,8 +33,9 @@ const Movie = () => {
   useEffect(() => {
     handleGetMovieDetails()
   }, [])
+
   return (
-    <div className={classes.container}>
+    <div className="movie-container">
       <img src={movieData.image} alt="Movie" />
       <h2>
         <strong>Title: </strong>
