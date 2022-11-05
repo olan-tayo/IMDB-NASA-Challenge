@@ -1,0 +1,51 @@
+.container {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  margin: 20px 0px 20px 20px;
+  cursor: pointer;
+  flex-basis: 100%;
+}
+.container a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.container a:hover {
+  text-decoration: rgb(255, 183, 3) underline;
+  color: rgb(0, 0, 0);
+}
+
+.container img {
+  display: block;
+  min-height: 400px;
+  width: 100%;
+  margin: 0px 0px 20px;
+}
+
+.container h1 {
+  margin: 0px 0px 20px;
+  text-align: center;
+  color: rgb(255, 183, 3);
+}
+
+.container h4 {
+  margin: 0px 0px 10px;
+}
+
+.container p:nth-child(1) {
+  margin: 0px 0px 20px;
+}
+
+.container em {
+  color: rgb(255, 183, 3);
+  font-style: normal;
+}
+
+@media (min-width: 1024px) {
+  .container h4 {
+    font-size: 22px;
+  }
+}
