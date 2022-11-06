@@ -27,4 +27,3 @@ it should look like this
 4) Run npm start to load the project
 
 ![image](https://user-images.githubusercontent.com/67685165/200194719-d059381f-79d6-47a3-a169-d80d94e18851.png)
->>>>>>> cc874b085de5e23e7515385fb59a958a8034deb2
