@@ -9,14 +9,14 @@ const Card = ({ img, href, title, description, popularity, releaseDate }) => {
         <div>
           <img src={img} alt="Movies" />
         </div>
-        <h1>{title}</h1>
+        <h1 data-testid="card-title">{title}</h1>
         <h4>Description:</h4>
-        <p>{description}</p>
+        <p data-testid="card-description">{description}</p>
         <p>
-          Popularity: <em>{popularity}</em>
+          Popularity: <em data-testid="card-popularity">{popularity}</em>
         </p>
         <p>
-          Release Date: <em>{releaseDate}</em>
+          Release Date: <em data-testid="card-release-date">{releaseDate}</em>
         </p>
       </Link>
     </div>

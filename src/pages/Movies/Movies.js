@@ -29,6 +29,7 @@ const Movies = () => {
         return (
           <Card
             key={index}
+            data-testid="card"
             img={
               data.poster_path
                 ? 'https://image.tmdb.org/t/p/original//' + data.poster_path
