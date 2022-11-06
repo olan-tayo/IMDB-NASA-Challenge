@@ -10,7 +10,7 @@ const Movie = () => {
   // function to get movie by id
   const handleGetMovieDetails = async () => {
     let response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=48b43c71c226d58239efb833d05ab17c`,
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
     )
 
     setMoviesData({

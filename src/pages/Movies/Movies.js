@@ -6,8 +6,7 @@ import gallery from '../../assets/gallery.png'
 
 const Movies = () => {
   // Endpoint to get the list of all the movies
-  const baseURL =
-    ' https://api.themoviedb.org/3/search/movie?api_key=48b43c71c226d58239efb833d05ab17c&language=en-US&query=NASA&include_adult=false&1'
+  const baseURL = `https://api.themoviedb.org/3/search/movie?language=en-US&query=NASA&include_adult=false&1&api_key=${process.env.REACT_APP_IMDB_API_KEY}`
 
   const [moviesData, setMoviesData] = useState([])
 

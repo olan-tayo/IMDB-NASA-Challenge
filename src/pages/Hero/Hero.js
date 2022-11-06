@@ -5,7 +5,7 @@ import moment from 'moment'
 
 const Hero = () => {
   // Endpoint to get the hero date and image
-  const baseURL = `https://api.nasa.gov/planetary/apod?api_key=SPkLKA7bCBamNIY9kJ4ceIeWB67uFjxP5lXkQeNR`
+  const baseURL = `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}`
   const [heroData, setHeroData] = useState({})
 
   const handleGetHeroData = async () => {
