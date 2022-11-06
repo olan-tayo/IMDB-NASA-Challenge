@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import '../Movie/Movie.scss'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
@@ -7,13 +7,12 @@ const Movie = () => {
   const { id } = useParams()
   const [movieData, setMoviesData] = useState({})
   const [loading, setLoading] = useState(true)
+  const baseURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_IMDB_API_KEY}`
 
   // function to get movie by id
-  const handleGetMovieDetails = async () => {
+  const handleGetMovieDetails = useCallback(async () => {
     try {
-      let response = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_IMDB_API_KEY}`,
-      )
+      let response = await axios.get(baseURL)
 
       setMoviesData({
         image:
@@ -30,15 +29,16 @@ const Movie = () => {
         genres: response.data.genres,
         languages: response.data.spoken_languages,
       })
+
       setLoading(false)
     } catch (error) {
       setLoading(false)
     }
-  }
+  }, [baseURL])
 
   useEffect(() => {
     handleGetMovieDetails()
-  }, [])
+  }, [handleGetMovieDetails])
 
   return (
     <div className="movie-container">

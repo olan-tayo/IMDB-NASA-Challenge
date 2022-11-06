@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Card from '../../components/Card/Card'
 import '../Movies/Movies.scss'
 import gallery from '../../assets/gallery.png'
@@ -10,18 +10,16 @@ const Movies = () => {
 
   const [moviesData, setMoviesData] = useState([])
 
-  const handleGetMoviesData = async () => {
+  const handleGetMoviesData = useCallback(async () => {
     try {
       let response = await axios.get(baseURL)
       setMoviesData(response.data.results)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+    } catch (error) {}
+  }, [baseURL])
 
   useEffect(() => {
     handleGetMoviesData()
-  }, [])
+  }, [handleGetMoviesData])
 
   return (
     <section className="movies-container">

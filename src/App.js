@@ -2,7 +2,6 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage/LandingPage'
 import Movie from './pages/Movie/Movie'
-import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
